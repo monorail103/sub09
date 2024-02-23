@@ -1,3 +1,5 @@
 .env/
 cv31_3.py
 cv32.py
+webtest.py
+__pycache__/
