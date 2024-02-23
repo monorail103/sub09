@@ -55,10 +55,6 @@ class MainWindow(Qw.QMainWindow):
         self.lb_msg = Qw.QLabel('起動までしばらくお待ち下さい',self)
         self.lb_msg.setGeometry(170,10,500,30)
 
-        #「Show MessageBox 1」ボタンの生成と設定
-        self.btn_1 = Qw.QPushButton('Show MessageBox 1',self)
-        self.btn_1.setGeometry(10,10,150,25)
-        self.btn_1.clicked.connect(self.countchange)
 
     def handchange(self):
         if self.flag:
@@ -69,15 +65,6 @@ class MainWindow(Qw.QMainWindow):
         elif self.count == 5:
             self.lb_msg.setText('ポン！')
             self.count = 0
-
-    def countchange(self):
-        if self.flag:
-            self.count = 0
-            self.lb_msg.setText('一時停止中')
-            self.flag = False
-        else:
-            self.flag = True
-
 
     # 画像更新用のスロット
     @Slot(np.ndarray)
